@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//usr/local/bin/**)",
+      "Read(//Users/ramindia/.nvm/versions/node/**)",
+      "Read(//Users/ramindia/.volta/bin/**)",
+      "Read(//Users/ramindia/**)",
+      "Bash(command -v node)",
+      "Bash(sudo ln:*)",
+      "Bash(npx --version)",
+      "mcp__mcp-registry__search_mcp_registry",
+      "WebSearch",
+      "Bash(git --version)",
+      "Bash(git config:*)",
+      "Bash(ssh -T git@github.com)",
+      "Bash(ssh-keygen -t ed25519 -C \"growviaai@gmail.com\" -f ~/.ssh/id_ed25519 -N \"\")"
+    ]
+  }
+}
