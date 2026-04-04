@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { SignIn, SignOutButton, useUser } from "@clerk/clerk-react";
+import { Authenticated, Unauthenticated, AuthLoading } from "convex/react";
 import './index.css';
 
-export default function App() {
+function AppContent() {
   const [activeTab, setActiveTab] = useState<'attendance' | 'expense'>('expense');
+  const { user } = useUser();
 
   return (
     <div>
@@ -15,7 +18,11 @@ export default function App() {
           </picture>
           <p className="subtitle">Noir Estate Management</p>
         </div>
-        <div className="avatar">
+        <div className="avatar" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          {user && <span style={{ fontSize: '12px', opacity: 0.7 }}>{user.firstName}</span>}
+          <SignOutButton>
+            <button className="button" style={{ padding: '6px 12px', fontSize: '12px' }}>Sign Out</button>
+          </SignOutButton>
           <img src="/boss-piggy.png" alt="Boss Piggy Mascot" title="Boss Piggy" />
         </div>
       </div>
@@ -103,5 +110,25 @@ export default function App() {
       )}
 
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <>
+      <AuthLoading>
+        <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '40vh', fontSize: '14px', opacity: 0.5 }}>
+          Loading...
+        </div>
+      </AuthLoading>
+      <Unauthenticated>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+          <SignIn />
+        </div>
+      </Unauthenticated>
+      <Authenticated>
+        <AppContent />
+      </Authenticated>
+    </>
   );
 }

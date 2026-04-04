@@ -13,7 +13,20 @@
       "Bash(git --version)",
       "Bash(git config:*)",
       "Bash(ssh -T git@github.com)",
-      "Bash(ssh-keygen -t ed25519 -C \"growviaai@gmail.com\" -f ~/.ssh/id_ed25519 -N \"\")"
+      "Bash(ssh-keygen -t ed25519 -C \"growviaai@gmail.com\" -f ~/.ssh/id_ed25519 -N \"\")",
+      "Bash(npx convex:*)",
+      "Bash(export PATH=\"/usr/local/bin:/opt/homebrew/bin:$PATH\")",
+      "Bash(npm install:*)",
+      "Bash(/usr/local/bin/npx --yes npm install @clerk/clerk-react)",
+      "Bash(/usr/local/bin/node --version)",
+      "Read(//usr/local/lib/node_modules/.bin/**)",
+      "Read(//usr/local/lib/node_modules/npm/bin/**)",
+      "Read(//usr/local/**)",
+      "Bash(/usr/local/bin/node -e \"const { execSync } = require\\(''child_process''\\); console.log\\(execSync\\(''find / -name npm -type f 2>/dev/null | head -5''\\).toString\\(\\)\\)\")",
+      "Bash(export PATH=\"$HOME/.nvm/versions/node/v25.9.0/bin:$PATH\")",
+      "Bash(git clone:*)",
+      "Bash(./setup)",
+      "Bash(export PATH=\"$HOME/.bun/bin:$PATH\")"
     ]
   }
 }
