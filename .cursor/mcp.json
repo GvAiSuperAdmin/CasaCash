@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "base44": {
+      "url": "https://homeopswithpiggybanks.base44.app/api/mcp"
+    }
+  }
+}
